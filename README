@@ -1,0 +1,26 @@
+NJU OS Labs 2018
+
+This is the personal implementation of the 2018 spring OS Labs at Nanjing University instructed by Dr. Jiang Yanyan. The project is opensourced under GPL v3.
+
+* Warning to my dear classmates *
+You will be at your own risk if you use any of the code in this repository. 
+
+= pstree.c =
+
+This project implemented a miniature of the classic UNIX command pstree by reading kernel information from the /proc directory(thus makes it only compatible with Linux), which lists all the processes running in the form of a tree. The program implemented 3 options wwhich are
+  -p, --show-pids:      which prints out the PID of each process.
+  -n, --numeric-sort:   which sorts all the processes by their PIDs.
+  -k, --kernel-threads: which prints out the kernel threads along side with normal output.
+Also a -V or --version option is available to provide version informaion of the program.
+
+= perf.c =
+
+Performance evaluator which lists all the system calls during the process and the time they cost. (It is in fact no more than a *beautiful* shell of "strace -T")
+
+= crepl.c=
+
+C read-evaluate-print-loop. It takes the input of a valid C code (but with some limitations) to provide an interactive C code shell. Limitations includes
+1. Only int functions are accepted and registered.
+2. All other code will be regarded as an expression.
+3. A function or an expression must take and only take a single line.
+4. All other input's results will be undefined.
